@@ -23,4 +23,4 @@ sudo chmod 777 xentaos-1.3LTS-xfce-i386-$jahitan.iso
 isohybrid xentaos-1.3LTS-xfce-i386-$jahitan.iso
 md5sum xentaos-1.3LTS-xfce-i386-$jahitan.iso   >   xentaos-1.3LTS-xfce-i386-$jahitan.iso.md5msum
 sha1sum xentaos-1.3LTS-xfce-i386-$jahitan.iso  >   xentaos-1.3LTS-xfce-i386-$jahitan.iso.sha1sum
-sha2sum xentaos-1.3LTS-xfce-i386-$jahitan.iso  >   xentaos-1.3LTS-xfce-i386-$jahitan.iso.sha2shum
+sha2sum xentaos-1.3LTS-xfce-i386-$jahitan.iso  >   xentaos-1.3LTS-xfce-i386-$jahitan.iso.sha2sum
