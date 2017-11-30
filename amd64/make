@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+versi="1.3LTS"
+codename=arok
+de=cinnamon
+jahitan=jh000
+dir_project=/home/$(whoami)/xentaos/pengembangan/amd64/
+dir_root=/home/$(whoami)/xentaos/pengembangan/amd64/root
+dir_dvd=/home/$(whoami)/xentaos/pengembangan/amd64/dvd
+dir_iso=/home/$(whoami)/xentaos/perilisan/amd64/iso
+dir_backup=/media/$(whoami)/backup/iso
+figlet .make
+echo " Xenta Distro Builder"
+sudo rm $dir_dvd/casper/filesystem.squashfs 
+cd $dir_project
+sudo chmod +w $dir_dvd/casper/filesystem.manifest
+sudo su
+# sudo chroot root dpkg-query -W --showformat='${Package} ${Version}\n' > ./dvd/casper/filesystem.manifest
+# printf $(sudo du -sx --block-size=1 root | cut -f1) > ./dvd/casper/filesystem.size
+# exit

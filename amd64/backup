@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+versi="1.3LTS"
+codename=arok
+de=cinnamon
+jahitan=jh000
+dir_project=/home/$(whoami)/xentaos/pengembangan/amd64/
+dir_root=/home/$(whoami)/xentaos/pengembangan/amd64/root
+dir_dvd=/home/$(whoami)/xentaos/pengembangan/amd64/dvd
+dir_iso=/home/$(whoami)/xentaos/perilisan/amd64/iso
+dir_backup=/media/$(whoami)/backup/iso
+figlet backup
+echo " Xenta Distro Builder"
+cd $dir_iso
+pv xentaos-1.3LTS-xfce-i386-$jahitan.iso > $dir_backup/xentaos-1.3LTS-xfce-i386-$jahitan.iso
+pv xentaos-1.3LTS-xfce-i386-$jahitan.iso.md5msum > $dir_backup/xentaos-1.3LTS-xfce-i386-$jahitan.iso.md5msum
+pv xentaos-1.3LTS-xfce-i386-$jahitan.iso.sha1sum > $dir_backup/xentaos-1.3LTS-xfce-i386-$jahitan.iso.sha1sum
+pv xentaos-1.3LTS-xfce-i386-$jahitan.iso.sha2sum > $dir_backup/xentaos-1.3LTS-xfce-i386-$jahitan.iso.sha2sum

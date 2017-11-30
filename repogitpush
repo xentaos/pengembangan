@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+figlet repogitpush
+git pull
+git add -A
+git commit -am "update"
+git push
