@@ -12,17 +12,14 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>
 
-team=pengembangan
-
-figlet $team
-echo " Set Remote... "
-git remote set-url origin git@github.com:xentaos/$team.git
-echo " Pull Request Github... "
-git pull
-echo " Git Add Local... "
-git add -A
-echo " Git Commit Local... "
-git commit -am "update"
-echo " Git Push Local to Github... "
-git push
-echo " Berhasil... "
+who=$(whoami)
+figlet distexit
+echo " Xenta Distro Builder"
+echo " "
+apt-get clean
+apt-get autoremove
+rm -rf /tmp/* ~/.bash_history
+umount /proc
+umount /sys
+umount /dev/pts
+exit
