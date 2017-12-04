@@ -12,14 +12,20 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>
 
-who=$(whoami)
-figlet distexit
+versi="1.3LTS"
+codename=arok
+de=xfce
+jahitan=jh000
+dir_project=/home/$(whoami)/xentaos/pengembangan/i386/
+dir_root=/home/$(whoami)/xentaos/pengembangan/i386/root
+dir_dvd=/home/$(whoami)/xentaos/pengembangan/i386/dvd
+dir_iso=/home/$(whoami)/xentaos/perilisan/i386/iso
+dir_backup=/media/$(whoami)/backup/iso
+figlet .continue
 echo " Xenta Distro Builder"
 echo " "
-apt-get clean
-apt-get autoremove
-rm -rf /tmp/* ~/.bash_history
-umount /proc
-umount /sys
-umount /dev/pts
-exit
+cd $dir_project
+sudo cp cook/*.sh root/usr/bin/
+sudo cp /etc/resolv.conf root/etc/
+sudo mount --bind /dev/ root/dev
+sudo chroot root
