@@ -6,6 +6,11 @@ Perangkat Lunak yang diperlukan dalam Berkontribusi:
 Pemasangan Perangkat Lunak melalui APT (Debian/Ubuntu/Linux Mint/Xenta OS).  
 > sudo apt-get install isolinux syslinux syslinux-utils genisoimage squashfs-tools
 
+**Optional:**  
+ * [VirtualBox](https://www.virtualbox.org/)
+Pemasangan Perangkat Lunak melalui APT (Debian/Ubuntu/Linux Mint/Xenta OS).  
+> sudo apt-get install virtualbox virtualbox-qt
+
 ## Team
 Tim Pengembangan. [Disini](http://dev.xentaos.org/team.html)
 
@@ -20,9 +25,11 @@ Progress Tim Pengembangan. [Disini](http://dev.xentaos.org/progress.html)
 
 ## Notes
 **Contribution**
- * Dalam Berkontribusi Distro yang digunakan Xenta OS.
+ * Dalam Berkontribusi Distro yang digunakan boleh bebas.
  * Memasang Perangkat Lunak yang dibutuhkan.
 
 **Developer**
- * Untuk menjadi Developer Xenta OS Persyaratan memasang Xenta OS.
+ * Untuk menjadi Developer Xenta OS Persyaratan memasang Xenta OS*.
  * Memasang Perangkat Lunak yang dibutuhkan.
+> ***Kebijakan:**  
+>  * Diijinkan menggunakan Distro selain Xenta OS dengan syarat memasang Xenta OS secara Virtual atau Dual Boot.
