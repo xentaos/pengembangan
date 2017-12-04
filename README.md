@@ -7,7 +7,7 @@ Pemasangan Perangkat Lunak melalui APT (Debian/Ubuntu/Linux Mint/Xenta OS).
 > sudo apt-get install isolinux syslinux syslinux-utils genisoimage squashfs-tools
 
 **Optional:**  
- * [VirtualBox](https://www.virtualbox.org/)  
+ * [VirtualBox](https://www.virtualbox.org/)
 Pemasangan Perangkat Lunak melalui APT (Debian/Ubuntu/Linux Mint/Xenta OS).  
 > sudo apt-get install virtualbox virtualbox-qt
 
