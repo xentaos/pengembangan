@@ -1,19 +1,22 @@
-# Repository PPA Inkscape "Stable"
+# Repository PPA List
+**Inkscape** "Stable"  
+Key : 
+> apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $Key
 deb http://ppa.launchpad.net/inkscape.dev/stable/ubuntu xenial main 
 deb-src http://ppa.launchpad.net/inkscape.dev/stable/ubuntu xenial main 
 
-# Repository PPA LibreOffice "Fresh"
+LibreOffice "Fresh"
 deb http://ppa.launchpad.net/libreoffice/ppa/ubuntu xenial main 
 deb-src http://ppa.launchpad.net/libreoffice/ppa/ubuntu xenial main 
 
-# Repository PPA Firefox "Beta"
+Firefox "Beta"
 deb http://ppa.launchpad.net/mozillateam/firefox-next/ubuntu xenial main 
 deb-src http://ppa.launchpad.net/mozillateam/firefox-next/ubuntu xenial main 
 
-# Repository PPA Geany "Stable"
+Geany "Stable"
 deb http://ppa.launchpad.net/klaus-vormweg/bluefish/ubuntu xenial main 
 deb-src http://ppa.launchpad.net/klaus-vormweg/bluefish/ubuntu xenial main 
 
-# Repository PPA Uget "Stable"
+Uget "Stable"
 deb http://ppa.launchpad.net/plushuang-tw/uget-stable/ubuntu xenial main 
 deb-src http://ppa.launchpad.net/plushuang-tw/uget-stable/ubuntu xenial main 
