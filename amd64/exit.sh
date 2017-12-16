@@ -15,16 +15,10 @@
 versi="1.3LTS"
 codename=arok
 de=cinnamon
-jahitan=jh000
-dir_project=/home/$(whoami)/xentaos/pengembangan/amd64/
-dir_root=/home/$(whoami)/xentaos/pengembangan/amd64/root
-dir_dvd=/home/$(whoami)/xentaos/pengembangan/amd64/dvd
-dir_iso=/home/$(whoami)/xentaos/perilisan/amd64/iso
-dir_backup=/media/$(whoami)/backup/iso
+jahitan=beta
 figlet .exit
 echo " Xenta Distro Builder"
 echo " "
-cd $dir_project
 sudo rm -rf root/usr/bin/distcontinue
 sudo rm -rf root/usr/bin/distexit
 sudo umount root/dev
