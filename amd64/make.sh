@@ -15,7 +15,7 @@
 versi="1.3LTS"
 codename=arok
 de=cinnamon
-jahitan=jh000
+jahitan=beta
 figlet .make
 echo " Xenta Distro Builder"
 sudo rm ./dvd/casper/filesystem.squashfs 
