@@ -15,25 +15,30 @@
 versi="1.3LTS"
 codename=arok
 de=cinnamon
-jahitan=jh000
-dir_project=/home/$(whoami)/xentaos/pengembangan/amd64/
-dir_root=/home/$(whoami)/xentaos/pengembangan/amd64/root
-dir_dvd=/home/$(whoami)/xentaos/pengembangan/amd64/dvd
-dir_iso=/home/$(whoami)/xentaos/perilisan/amd64/iso
-dir_backup=/media/$(whoami)/backup/iso
+jahitan=beta
 figlet .iso
 echo " Xenta Distro Builder"
-cd $dir_project
-sudo cp $dir_dvd/casper/filesystem.manifest $dir_dvd/casper/filesystem.manifest-desktop
-cd $dir_iso
-sudo rm MD5SUMS
+#cd $dir_project
+sudo cp  dvd/casper/filesystem.manifest  dvd/casper/filesystem.manifest-desktop
+sudo mksquashfs root dvd/casper/filesystem.squashfs -b 1048576 -comp xz -Xdict-size 100%
+cd dvd && sudo rm MD5SUMS
 find -type f -print0 | sudo xargs -0 md5sum | grep -v isolinux/boot.cat | sudo tee MD5SUMS
-cd $dir_project
-sudo mksquashfs root $dir_dvd/casper/filesystem.squashfs -b 1048576 -comp xz -Xdict-size 100%
-sudo mkisofs -r -V "xentaos-1.3LTS-cinnamon-amd64" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o $dir_iso/xentaos-1.3LTS-cinnamon-amd64-$jahitan.iso $dir_dvd
-cd $dir_iso
+
+sudo mkisofs -r -V "xentaos-1.3LTS-cinnamon-amd64" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ./xentaos-1.3LTS-cinnamon-amd64.iso dvd
+
 sudo chmod 777 xentaos-1.3LTS-cinnamon-amd64-$jahitan.iso
-isohybrid xentaos-1.3LTS-xfce-i386-$jahitan.iso
-md5sum xentaos-1.3LTS-xfce-i386-$jahitan.iso   >   xentaos-1.3LTS-xfce-i386-$jahitan.iso.md5msum
-sha1sum xentaos-1.3LTS-xfce-i386-$jahitan.iso  >   xentaos-1.3LTS-xfce-i386-$jahitan.iso.sha1sum
-sha2sum xentaos-1.3LTS-xfce-i386-$jahitan.iso  >   xentaos-1.3LTS-xfce-i386-$jahitan.iso.sha2sum
+isohybrid xentaos-1.3LTS-cinnamon-amd64-$jahitan.iso
+md5sum xentaos-1.3LTS-cinnamon-amd64-$jahitan.iso   >   xentaos-1.3LTS-cinnamon-amd64-$jahitan.iso.md5msum
+sha1sum xentaos-1.3LTS-cinnamon-amd64-$jahitan.iso  >   xentaos-1.3LTS-cinnamon-amd64-$jahitan.iso.sha1sum
+sha2sum xentaos-1.3LTS-cinnamon-amd64-$jahitan.iso  >   xentaos-1.3LTS-cinnamon-amd64-$jahitan.iso.sha2sum
+
+sudo mkisofs -r -V "xentaos-1.3LTS-cinnamon-amd64" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ./xentaos-1.3LTS-cinnamon-amd64.iso dvd
+
+sudo chmod 777 xentaos-1.3LTS-cinnamon-amd64.iso
+isohybrid xentaos-1.3LTS-cinnamon-amd64.iso
+md5sum xentaos-1.3LTS-cinnamon-amd64.iso   >   xentaos-1.3LTS-cinnamon-amd64.iso.md5msum
+sha1sum xentaos-1.3LTS-cinnamon-amd64.iso  >   xentaos-1.3LTS-cinnamon-amd64.iso.sha1sum
+sha2sum xentaos-1.3LTS-cinnamon-amd64.iso  >   xentaos-1.3LTS-cinnamon-amd64.iso.sha2sum
+gpg --detach-sign -o xentaos-1.3LTS-cinnamon-amd64.gpg xentaos-1.3LTS-cinnamon-amd64.iso
+
+

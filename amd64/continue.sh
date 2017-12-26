@@ -15,7 +15,7 @@
 versi="1.3LTS"
 codename=arok
 de=cinnamon
-jahitan=jh000
+jahitan=001
 dir_project=/home/$(whoami)/xentaos/pengembangan/amd64/
 dir_root=/home/$(whoami)/xentaos/pengembangan/amd64/root
 dir_dvd=/home/$(whoami)/xentaos/pengembangan/amd64/dvd
@@ -24,8 +24,8 @@ dir_backup=/media/$(whoami)/backup/iso
 figlet .continue
 echo " Xenta Distro Builder"
 echo " "
-cd $dir_project
-sudo cp cook/*.sh root/usr/bin/
+#cd $dir_project
+#sudo cp cook/*.sh root/usr/bin/
 sudo cp /etc/resolv.conf root/etc/
 sudo mount --bind /dev/ root/dev
 sudo chroot root

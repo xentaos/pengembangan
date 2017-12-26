@@ -12,14 +12,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>
 
-who=$(whoami)
-figlet distexit
-echo " Xenta Distro Builder"
-echo " "
-apt-get clean
-apt-get autoremove
-rm -rf /tmp/* ~/.bash_history
-umount /proc
-umount /sys
-umount /dev/pts
-exit
+# sudo cp root/boot/vmlinuz-4.8.0-58-generic dvd/casper/vmlinuz
+version_kernel="4.13.0-19"
+sudo rm -rf dvd/casper/initrd.lz
+sudo cp root/boot/initrd.img-$version_kernel-generic dvd/casper/initrd.lz
+sudo rm -rf dvd/casper/vmlinuz
+sudo cp root/boot/vmlinuz-$version_kernel-generic  dvd/casper/vmlinuz

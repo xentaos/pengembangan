@@ -13,11 +13,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>
 
 who=$(whoami)
-figlet distcontinue
+figlet distexit
 echo " Xenta Distro Builder"
 echo " "
-mount -t proc none /proc
-mount -t sysfs none /sys
-mount -t devpts none /dev/pts
-export HOME=/root
-export LC_ALL=C
+apt-get clean && apt-get autoremove && rm -rf /tmp/* ~/.bash_history
+umount /proc && umount /sys && umount /dev/pts
+exit

@@ -11,16 +11,10 @@
 # .
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>
-
-versi="1.3LTS"
-codename=arok
-de=cinnamon
-jahitan=004
-figlet .make
+h
+who=$(whoami)
+figlet distcontinue
 echo " Xenta Distro Builder"
-sudo rm dvd/casper/filesystem.squashfs 
-sudo chmod +w dvd/casper/filesystem.manifest
-sudo su
-# sudo chroot root dpkg-query -W --showformat='${Package} ${Version}\n' > ./dvd/casper/filesystem.manifest
-# printf $(sudo du -sx --block-size=1 root | cut -f1) > ./dvd/casper/filesystem.size
-# exit
+echo " "
+mount -t proc none /proc && mount -t sysfs none /sys && mount -t devpts none /dev/pts
+export HOME=/root && export LC_ALL=C

@@ -11,13 +11,10 @@
 # .
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>
-h
+
 who=$(whoami)
 figlet distcontinue
 echo " Xenta Distro Builder"
 echo " "
-mount -t proc none /proc
-mount -t sysfs none /sys
-mount -t devpts none /dev/pts
-export HOME=/root
-export LC_ALL=C
+mount -t proc none /proc && mount -t sysfs none /sys && mount -t devpts none /dev/pts
+export HOME=/root && export LC_ALL=C

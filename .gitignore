@@ -1,6 +1,11 @@
 # Ignore
 amd64/root
 amd64/dvd
+amd64/bugs
+amd64/done
+amd64/dvd
+amd64/incoming
+amd64/log
 i386/root
 i386/dvd
 

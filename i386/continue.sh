@@ -16,16 +16,9 @@ versi="1.3LTS"
 codename=arok
 de=xfce
 jahitan=jh000
-dir_project=/home/$(whoami)/xentaos/pengembangan/i386/
-dir_root=/home/$(whoami)/xentaos/pengembangan/i386/root
-dir_dvd=/home/$(whoami)/xentaos/pengembangan/i386/dvd
-dir_iso=/home/$(whoami)/xentaos/perilisan/i386/iso
-dir_backup=/media/$(whoami)/backup/iso
 figlet .continue
 echo " Xenta Distro Builder"
 echo " "
-cd $dir_project
-sudo cp cook/*.sh root/usr/bin/
 sudo cp /etc/resolv.conf root/etc/
 sudo mount --bind /dev/ root/dev
 sudo chroot root
