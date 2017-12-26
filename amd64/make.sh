@@ -15,11 +15,19 @@
 versi="1.3LTS"
 codename=arok
 de=cinnamon
+<<<<<<< HEAD
 jahitan=004
 figlet .make
 echo " Xenta Distro Builder"
 sudo rm dvd/casper/filesystem.squashfs 
 sudo chmod +w dvd/casper/filesystem.manifest
+=======
+jahitan=beta
+figlet .make
+echo " Xenta Distro Builder"
+sudo rm ./dvd/casper/filesystem.squashfs 
+sudo chmod +w ./dvd/casper/filesystem.manifest
+>>>>>>> 9c78eebc1d8330ad65f8306ca5493d55698238c9
 sudo su
 # sudo chroot root dpkg-query -W --showformat='${Package} ${Version}\n' > ./dvd/casper/filesystem.manifest
 # printf $(sudo du -sx --block-size=1 root | cut -f1) > ./dvd/casper/filesystem.size

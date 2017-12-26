@@ -18,6 +18,7 @@ de=cinnamon
 jahitan=beta
 figlet .iso
 echo " Xenta Distro Builder"
+<<<<<<< HEAD
 #cd $dir_project
 sudo cp  dvd/casper/filesystem.manifest  dvd/casper/filesystem.manifest-desktop
 sudo mksquashfs root dvd/casper/filesystem.squashfs -b 1048576 -comp xz -Xdict-size 100%
@@ -26,6 +27,16 @@ find -type f -print0 | sudo xargs -0 md5sum | grep -v isolinux/boot.cat | sudo t
 
 sudo mkisofs -r -V "xentaos-1.3LTS-cinnamon-amd64" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ./xentaos-1.3LTS-cinnamon-amd64.iso dvd
 
+=======
+sudo cp ./dvd/casper/filesystem.manifest $dir_dvd/casper/filesystem.manifest-desktop
+sudo mksquashfs root $dir_dvd/casper/filesystem.squashfs -b 1048576 -comp xz -Xdict-size 100%
+cd dvd
+sudo rm MD5SUMS
+find -type f -print0 | sudo xargs -0 md5sum | grep -v isolinux/boot.cat | sudo tee MD5SUMS
+cd ..
+sudo mksquashfs root ./dvd/casper/filesystem.squashfs -b 1048576 -comp xz -Xdict-size 100%
+sudo mkisofs -r -V "xentaos-1.3LTS-cinnamon-amd64" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o $dir_iso/xentaos-1.3LTS-cinnamon-amd64-$jahitan.iso ./dvd
+>>>>>>> 9c78eebc1d8330ad65f8306ca5493d55698238c9
 sudo chmod 777 xentaos-1.3LTS-cinnamon-amd64-$jahitan.iso
 isohybrid xentaos-1.3LTS-cinnamon-amd64-$jahitan.iso
 md5sum xentaos-1.3LTS-cinnamon-amd64-$jahitan.iso   >   xentaos-1.3LTS-cinnamon-amd64-$jahitan.iso.md5msum

@@ -15,6 +15,7 @@
 versi="1.3LTS"
 codename=arok
 de=cinnamon
+<<<<<<< HEAD
 jahitan=001
 dir_project=/home/$(whoami)/xentaos/pengembangan/amd64/
 dir_root=/home/$(whoami)/xentaos/pengembangan/amd64/root
@@ -26,6 +27,13 @@ echo " Xenta Distro Builder"
 echo " "
 #cd $dir_project
 #sudo cp cook/*.sh root/usr/bin/
+=======
+jahitan=beta
+figlet .continue
+echo " Xenta Distro Builder"
+echo " "
+sudo cp cook/*.sh root/usr/bin/
+>>>>>>> 9c78eebc1d8330ad65f8306ca5493d55698238c9
 sudo cp /etc/resolv.conf root/etc/
 sudo mount --bind /dev/ root/dev
 sudo chroot root
