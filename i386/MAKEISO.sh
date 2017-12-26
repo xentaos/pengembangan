@@ -15,25 +15,32 @@
 versi="1.3LTS"
 codename=arok
 de=xfce
-jahitan=jh000
+version_kernel="4.13.0-19"
+jahitan=001
 dir_project=/home/$(whoami)/xentaos/pengembangan/i386/
 dir_root=/home/$(whoami)/xentaos/pengembangan/i386/root
 dir_dvd=/home/$(whoami)/xentaos/pengembangan/i386/dvd
-dir_iso=/home/$(whoami)/xentaos/perilisan/i386/iso
-dir_backup=/media/$(whoami)/backup/iso
-figlet .iso
-echo " Xenta Distro Builder"
-cd $dir_project
-sudo cp $dir_dvd/casper/filesystem.manifest $dir_dvd/casper/filesystem.manifest-desktop
-cd $dir_iso
-sudo rm MD5SUMS
+dir_iso_release=/home/$(whoami)/xentaos/perilisan/release/i386/
+dir_iso_tester=/home/$(whoami)/xentaos/perilisan/tester/i386/
+figlet makeiso.sh
+sudo rm -rf dvd/casper/initrd.lz
+sudo cp root/boot/initrd.img-$version_kernel-generic dvd/casper/initrd.lz
+sudo rm -rf dvd/casper/vmlinuz
+sudo cp root/boot/vmlinuz-$version_kernel-generic  dvd/casper/vmlinuz
+sudo rm ./dvd/casper/filesystem.squashfs 
+sudo chmod +w ./dvd/casper/filesystem.manifest
+sudo su
+# sudo chroot root dpkg-query -W --showformat='${Package} ${Version}\n' > ./dvd/casper/filesystem.manifest
+# printf $(sudo du -sx --block-size=1 root | cut -f1) > ./dvd/casper/filesystem.size
+# exit
+sudo cp  dvd/casper/filesystem.manifest  dvd/casper/filesystem.manifest-desktop
+sudo mksquashfs root dvd/casper/filesystem.squashfs -b 1048576 -comp xz -Xdict-size 100%
+cd dvd && sudo rm MD5SUMS
 find -type f -print0 | sudo xargs -0 md5sum | grep -v isolinux/boot.cat | sudo tee MD5SUMS
-cd $dir_project
-sudo mksquashfs root $dir_dvd/casper/filesystem.squashfs -b 1048576 -comp xz -Xdict-size 100%
-sudo mkisofs -r -V "xentaos-1.3LTS-xfce-i386" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o $dir_iso/xentaos-1.3LTS-xfce-i386-$jahitan.iso $dir_dvd
-cd $dir_iso
+cd ..
+sudo mkisofs -r -V "xentaos-1.3LTS-xfce-i386" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ./xentaos-1.3LTS-xfce-i386-$jahitan.iso dvd
 sudo chmod 777 xentaos-1.3LTS-xfce-i386-$jahitan.iso
 isohybrid xentaos-1.3LTS-xfce-i386-$jahitan.iso
 md5sum xentaos-1.3LTS-xfce-i386-$jahitan.iso   >   xentaos-1.3LTS-xfce-i386-$jahitan.iso.md5msum
 sha1sum xentaos-1.3LTS-xfce-i386-$jahitan.iso  >   xentaos-1.3LTS-xfce-i386-$jahitan.iso.sha1sum
-sha2sum xentaos-1.3LTS-xfce-i386-$jahitan.iso  >   xentaos-1.3LTS-xfce-i386-$jahitan.iso.sha2sum
+sha3sum xentaos-1.3LTS-xfce-i386-$jahitan.iso  >   xentaos-1.3LTS-xfce-i386-$jahitan.iso.sha3sum

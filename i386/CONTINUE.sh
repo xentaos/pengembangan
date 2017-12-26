@@ -15,16 +15,16 @@
 versi="1.3LTS"
 codename=arok
 de=xfce
-jahitan=jh000
 dir_project=/home/$(whoami)/xentaos/pengembangan/i386/
 dir_root=/home/$(whoami)/xentaos/pengembangan/i386/root
 dir_dvd=/home/$(whoami)/xentaos/pengembangan/i386/dvd
-dir_iso=/home/$(whoami)/xentaos/perilisan/i386/iso
-dir_backup=/media/$(whoami)/backup/iso
-figlet .exit
+dir_iso_release=/home/$(whoami)/xentaos/perilisan/release/i386/
+dir_iso_tester=/home/$(whoami)/xentaos/perilisan/tester/i386/
+figlet continue.sh
 echo " Xenta Distro Builder"
 echo " "
-cd $dir_project
-sudo rm -rf root/usr/bin/distcontinue
-sudo rm -rf root/usr/bin/distexit
-sudo umount root/dev
+sudo cp /etc/resolv.conf root/etc/
+sudo mount --bind /dev/ root/dev
+sudo chroot root
+mount -t proc none /proc && mount -t sysfs none /sys && mount -t devpts none /dev/pts
+export HOME=/root && export LC_ALL=C
