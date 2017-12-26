@@ -4,3 +4,4 @@ Xenta OS memfokuskan dan mengembangkan racikan Desktop Cinnamons Edisi di archit
 > Prosesor Minimal Dual Core 2.0 GHz  
 > Memory Minimal RAM 2 GB DDR3  
 > Video Grafis / GPU Minimal 1 Gb DDR3  
+> Hardisk Minimal 20 GB
