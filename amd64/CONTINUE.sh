@@ -15,25 +15,16 @@
 versi="1.3LTS"
 codename=arok
 de=cinnamon
-<<<<<<< HEAD
-jahitan=001
 dir_project=/home/$(whoami)/xentaos/pengembangan/amd64/
 dir_root=/home/$(whoami)/xentaos/pengembangan/amd64/root
 dir_dvd=/home/$(whoami)/xentaos/pengembangan/amd64/dvd
-dir_iso=/home/$(whoami)/xentaos/perilisan/amd64/iso
-dir_backup=/media/$(whoami)/backup/iso
-figlet .continue
+dir_iso_release=/home/$(whoami)/xentaos/perilisan/release/amd64/
+dir_iso_tester=/home/$(whoami)/xentaos/perilisan/tester/amd64/
+figlet continue.sh
 echo " Xenta Distro Builder"
 echo " "
-#cd $dir_project
-#sudo cp cook/*.sh root/usr/bin/
-=======
-jahitan=beta
-figlet .continue
-echo " Xenta Distro Builder"
-echo " "
-sudo cp cook/*.sh root/usr/bin/
->>>>>>> 9c78eebc1d8330ad65f8306ca5493d55698238c9
 sudo cp /etc/resolv.conf root/etc/
 sudo mount --bind /dev/ root/dev
 sudo chroot root
+mount -t proc none /proc && mount -t sysfs none /sys && mount -t devpts none /dev/pts
+export HOME=/root && export LC_ALL=C

@@ -15,20 +15,15 @@
 versi="1.3LTS"
 codename=arok
 de=cinnamon
-<<<<<<< HEAD
-jahitan=004
-figlet .make
+dir_project=/home/$(whoami)/xentaos/pengembangan/amd64/
+dir_root=/home/$(whoami)/xentaos/pengembangan/amd64/root
+dir_dvd=/home/$(whoami)/xentaos/pengembangan/amd64/dvd
+dir_iso_release=/home/$(whoami)/xentaos/perilisan/release/amd64/
+dir_iso_tester=/home/$(whoami)/xentaos/perilisan/tester/amd64/
+figlet exit.sh
 echo " Xenta Distro Builder"
-sudo rm dvd/casper/filesystem.squashfs 
-sudo chmod +w dvd/casper/filesystem.manifest
-=======
-jahitan=beta
-figlet .make
-echo " Xenta Distro Builder"
-sudo rm ./dvd/casper/filesystem.squashfs 
-sudo chmod +w ./dvd/casper/filesystem.manifest
->>>>>>> 9c78eebc1d8330ad65f8306ca5493d55698238c9
-sudo su
-# sudo chroot root dpkg-query -W --showformat='${Package} ${Version}\n' > ./dvd/casper/filesystem.manifest
-# printf $(sudo du -sx --block-size=1 root | cut -f1) > ./dvd/casper/filesystem.size
-# exit
+echo " "
+apt-get clean && apt-get autoremove && rm -rf /tmp/* ~/.bash_history
+umount /proc && umount /sys && umount /dev/pts
+exit
+sudo umount root/dev
