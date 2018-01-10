@@ -8,4 +8,6 @@ amd64/incoming
 amd64/log
 i386/root
 i386/dvd
+unstable64
+unstable32
 
