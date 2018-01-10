@@ -4,10 +4,16 @@ amd64/dvd
 amd64/bugs
 amd64/deb
 amd64/dvd
-amd64/incoming
 amd64/log
+
 i386/root
 i386/dvd
+i386/dvd
+i386/bugs
+i386/deb
+i386/dvd
+i386/log
+
 unstable64
 unstable32
 
